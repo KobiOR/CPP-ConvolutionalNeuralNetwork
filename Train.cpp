@@ -1,8 +1,4 @@
 #include <iostream>
-#include <cstdlib>
-#include <ctime>
-#include <fstream>
-#include <algorithm>
 #include "LoadDataSet.h"
 #include "CNN/Network.hpp"
 
@@ -12,8 +8,8 @@ using namespace std;
 void loadTrain(vector<vector<double> > &data, vector<int> &label) {
 
   vector<size_t> mnist_labels;
-  parse_mnist_images("/Users/admin/ClionProjects/CNN/DataSet/train-images.idx3-ubyte", &data);
-  parse_mnist_labels("/Users/admin/ClionProjects/CNN/DataSet/train-labels.idx1-ubyte", &mnist_labels);
+  parse_mnist_images("/Users/admin/ClionProjects/CNN/DataSet/TrainImages.idx3-ubyte", &data);
+  parse_mnist_labels("/Users/admin/ClionProjects/CNN/DataSet/TrainLabels.idx1-ubyte", &mnist_labels);
 
   int mx = *max_element(mnist_labels.begin(), mnist_labels.end());
   for(int i=0;i<mnist_labels.size();i++) {
@@ -23,8 +19,8 @@ void loadTrain(vector<vector<double> > &data, vector<int> &label) {
 void loadTest(vector<vector<double> > &data, vector<int> &label) {
 
   vector<size_t> mnist_labels;
-  parse_mnist_images("/Users/admin/ClionProjects/CNN/DataSet/t10k-images.idx3-ubyte", &data);
-  parse_mnist_labels("/Users/admin/ClionProjects/CNN/DataSet/t10k-labels.idx1-ubyte", &mnist_labels);
+  parse_mnist_images("/Users/admin/ClionProjects/CNN/DataSet/TestImages.idx3-ubyte", &data);
+  parse_mnist_labels("/Users/admin/ClionProjects/CNN/DataSet/TestLabels.idx1-ubyte", &mnist_labels);
 
   int mx = *max_element(mnist_labels.begin(), mnist_labels.end());
   for(int i=0;i<mnist_labels.size();i++) {

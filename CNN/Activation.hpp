@@ -14,7 +14,6 @@ enum ACTIVATION_TYPE {
   RECTIFIER = 2,
   ORIGINAL = 3
 };
-
 class Activation {
 
 public:
